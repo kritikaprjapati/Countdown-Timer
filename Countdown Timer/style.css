@@ -2,14 +2,15 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: #f0f4f8;
   text-align: center;
-  padding: 50px;
+  padding: 20px; /* reduced for small screens */
 }
 
 .container {
   background: #ffffff;
-  padding: 30px;
+  padding: 20px;
   border-radius: 12px;
   max-width: 500px;
+  width: 100%; /* responsive width */
   margin: auto;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
@@ -17,13 +18,15 @@ body {
 h1 {
   margin-bottom: 20px;
   color: #333;
+  font-size: 1.8rem;
 }
 
 input[type="datetime-local"] {
   padding: 10px;
   font-size: 16px;
   margin-bottom: 15px;
-  width: 80%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 button {
@@ -35,6 +38,7 @@ button {
   border-radius: 6px;
   cursor: pointer;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 button:hover {
@@ -44,19 +48,37 @@ button:hover {
 #countdown {
   display: flex;
   justify-content: space-around;
-  font-size: 24px;
+  flex-wrap: wrap; /* wrap items on small screens */
+  font-size: 1.2rem;
   margin-top: 20px;
+  gap: 10px;
 }
 
 #countdown div {
   padding: 10px;
   background: #e0eaff;
   border-radius: 10px;
-  width: 80px;
+  min-width: 70px;
+  flex: 1 1 40%;
 }
 
 #message {
   margin-top: 20px;
   font-weight: bold;
   color: green;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #countdown {
+    font-size: 1rem;
+  }
+
+  #countdown div {
+    min-width: 45%;
+  }
 }
