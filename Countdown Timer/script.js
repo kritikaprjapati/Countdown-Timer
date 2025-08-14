@@ -5,7 +5,7 @@ const message = document.getElementById('message');
 let countdownInterval;
 
 startBtn.addEventListener('click', () => {
-  clearInterval(countdownInterval); // Clear any previous countdown
+  clearInterval(countdownInterval);
   message.textContent = '';
 
   const targetDate = new Date(datetimeInput.value);
